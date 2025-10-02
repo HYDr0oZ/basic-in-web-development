@@ -1,0 +1,92 @@
+/*
+Author: Baptiste Rault
+Date: 2025-09-25
+*/
+
+/* General body styling */
+body {
+    background-color: #f8f9fa;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    line-height: 1.6;
+}
+
+/* Center content and add max-width */
+body > * {
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+/* Main heading styling */
+h1 {
+    color: #2c3e50;
+    font-size: 2.5em;
+    margin-bottom: 2em;
+    text-align: center;
+}
+
+/* Image styling with responsive width */
+img {
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+    display: block;
+    margin: 2em auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+/* Audio element styling */
+audio {
+    display: block;
+    margin: 2em auto;
+    width: 100%;
+    max-width: 400px;
+}
+
+/* Video element styling */
+video {
+    display: block;
+    margin: 2em auto;
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+/* Paragraph styling with proper spacing */
+p {
+    color: #555;
+    font-size: 1.1em;
+    margin: 2em auto;
+    padding: 0 20px;
+    text-align: justify;
+    max-width: 600px;
+    line-height: 1.8;
+}
+
+/* Add consistent spacing between all sections */
+h1, img, audio, video, p {
+    margin-top: 2em;
+    margin-bottom: 2em;
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 600px) {
+    body {
+        padding: 10px;
+    }
+    
+    h1 {
+        font-size: 2em;
+    }
+    
+    p {
+        padding: 0 10px;
+        text-align: left;
+    }
+}
