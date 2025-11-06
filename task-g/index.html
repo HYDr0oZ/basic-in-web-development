@@ -1,0 +1,101 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Form</title>
+  <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+  <!--
+    Author: Baptiste Rault
+    Date: 2025-10-30
+  -->
+
+  <header class="site-header">
+    <h1><Form></Form></h1>
+  </header>
+
+      <header class="site-header">
+        <h1>Form</h1>
+    </header>
+
+    <main class="content">
+        <div class="top-grid">
+            <!-- Formulaire -->
+            <div class="controls">
+                <h2 class="controls-title">Add</h2>
+                <form id="registrationForm">
+                    <!-- Hidden timestamp -->
+                    <input type="hidden" id="timestamp" name="timestamp">
+
+                    <!-- Nom complet -->
+                    <div class="form-row">
+                        <label for="fullName">Full name :</label>
+                        <input type="text" id="fullName" name="fullName" required>
+                        <span class="error-message" id="fullNameError"></span>
+                    </div>
+
+                    <!-- Email -->
+                    <div class="form-row">
+                        <label for="email">Email :</label>
+                        <input type="email" id="email" name="email" required>
+                        <span class="error-message" id="emailError"></span>
+                    </div>
+
+                    <!-- Téléphone -->
+                    <div class="form-row">
+                        <label for="phone">Phone :</label>
+                        <input type="tel" id="phone" name="phone" required>
+                        <span class="error-message" id="phoneError"></span>
+                    </div>
+
+                    <!-- Date de naissance -->
+                    <div class="form-row">
+                        <label for="birthDate">Date of birth :</label>
+                        <input type="date" id="birthDate" name="birthDate" required>
+                        <span class="error-message" id="birthDateError"></span>
+                    </div>
+
+                    <!-- Acceptation des conditions -->
+                    <div class="form-row checkbox-row">
+                        <input type="checkbox" id="terms" name="terms">
+                        <label for="terms">Accept terms</label>
+                        <span class="error-message" id="termsError"></span>
+                    </div>
+
+                    <!-- Bouton de soumission -->
+                    <div class="form-row">
+                        <button type="submit" class="btn">Add</button>
+                        <button type="reset" class="btn btn-secondary">Reset</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <!-- Tableau des participants -->
+        <div class="table-wrap">
+            <table class="table" id="participantsTable">
+                <thead>
+                    <tr>
+                        <th>Time</th>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Phone</th>
+                        <th>Date of birth</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Les lignes seront ajoutées ici dynamiquement -->
+                </tbody>
+            </table>
+        </div>
+    </main>
+
+    <script src="index.js"></script>
+  </main>
+</body>
+
+</html>
