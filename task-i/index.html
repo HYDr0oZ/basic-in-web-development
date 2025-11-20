@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alpine Ascent Rentals | Premium Ski & Snowboard Gear</title>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Montserrat:wght@400;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            dark: '#0f172a',
+                            primary: '#0ea5e9', // Sky blue
+                            accent: '#38bdf8',
+                            light: '#f8fafc'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        display: ['Montserrat', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Custom Animations */
+        .fade-in-up {
+            animation: fadeInUp 0.8s ease-out forwards;
+            opacity: 0;
+            transform: translateY(20px);
+        }
+
+        .delay-100 {
+            animation-delay: 0.1s;
+        }
+
+        .delay-200 {
+            animation-delay: 0.2s;
+        }
+
+        .delay-300 {
+            animation-delay: 0.3s;
+        }
+
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Smooth image zoom on hover */
+        .img-zoom-container {
+            overflow: hidden;
+        }
+
+        .img-zoom-container img {
+            transition: transform 0.5s ease;
+        }
+
+        .img-zoom-container:hover img {
+            transform: scale(1.05);
+        }
+
+        /* Gradient Text */
+        .text-gradient {
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-image: linear-gradient(to right, #38bdf8, #0284c7);
+        }
+    </style>
+
+</head>
+
+<body class="bg-slate-50 text-slate-800 font-sans antialiased selection:bg-brand-primary selection:text-white">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 bg-white/90 backdrop-blur-md border-b border-slate-200 transition-all duration-300"
+        id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo -->
+                <div class="flex-shrink-0 flex items-center cursor-pointer" onclick="window.scrollTo(0,0)">
+                    <i data-lucide="mountain-snow" class="h-8 w-8 text-brand-primary mr-2"></i>
+                    <span class="font-display font-bold text-xl text-slate-900 tracking-tight">ALPINE<span
+                            class="text-brand-primary">ASCENT</span></span>
+                </div>
+
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#about"
+                        class="text-sm font-medium text-slate-600 hover:text-brand-primary transition-colors">About</a>
+                    <a href="#features"
+                        class="text-sm font-medium text-slate-600 hover:text-brand-primary transition-colors">Why Us</a>
+                    <a href="#gear"
+                        class="text-sm font-medium text-slate-600 hover:text-brand-primary transition-colors">The
+                        Gear</a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="text-slate-600 hover:text-brand-primary focus:outline-none p-2">
+                        <i data-lucide="menu" class="h-6 w-6"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="md:hidden hidden bg-white border-t border-slate-100 absolute w-full">
+            <div class="px-4 pt-2 pb-6 space-y-1 shadow-lg">
+                <a href="#about"
+                    class="block px-3 py-3 text-base font-medium text-slate-600 hover:text-brand-primary hover:bg-slate-50 rounded-md">About</a>
+                <a href="#features"
+                    class="block px-3 py-3 text-base font-medium text-slate-600 hover:text-brand-primary hover:bg-slate-50 rounded-md">Why
+                    Us</a>
+                <a href="#gear"
+                    class="block px-3 py-3 text-base font-medium text-slate-600 hover:text-brand-primary hover:bg-slate-50 rounded-md">The
+                    Gear</a>
+                <a href="#contact"
+                    class="block mt-4 text-center w-full bg-brand-primary text-white px-4 py-3 rounded-lg font-bold shadow-md">
+
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="relative h-screen min-h-[600px] flex items-center justify-center overflow-hidden">
+        <!-- Background Image with Overlay -->
+        <div class="absolute inset-0 z-0">
+            <img src="images/accueil.jpg" alt="Skier carving down a snowy mountain"
+                class="w-full h-full object-cover"
+            >
+            <div class="absolute inset-0 bg-gradient-to-b from-slate-900/60 via-slate-900/40 to-slate-900/80"></div>
+        </div>
+
+        <!-- Hero Content -->
+        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center pt-16">
+            <span
+                class="inline-block py-1 px-3 rounded-full bg-brand-primary/20 border border-brand-primary/30 backdrop-blur-sm text-sky-200 text-sm font-semibold tracking-wide mb-6 fade-in-up">
+                PREMIUM RENTALS · Chamonix, France
+            </span>
+            <h1
+                class="text-4xl md:text-6xl lg:text-7xl font-display font-extrabold text-white tracking-tight mb-6 leading-tight fade-in-up delay-100">
+                Conquer the Slopes With <span
+                    class="text-transparent bg-clip-text bg-gradient-to-r from-brand-accent to-white">Confidence</span>
+            </h1>
+            <p class="mt-4 max-w-2xl mx-auto text-xl text-slate-200 fade-in-up delay-200 font-light">
+                High-performance skis and snowboards delivered directly to your lodge. Experience the mountain like
+                never before.
+            </p>
+            <div class="mt-10 flex flex-col sm:flex-row justify-center gap-4 fade-in-up delay-300">
+                <a href="#about"
+                    class="px-8 py-4 bg-white/10 hover:bg-white/20 backdrop-blur-md border border-white/30 text-white rounded-full text-lg font-bold transition-all flex items-center justify-center">
+                    Learn More
+                </a>
+            </div>
+        </div>
+
+        <!-- Scroll Down Indicator -->
+        <div class="absolute bottom-8 transform -translate-x-1/2 animate-bounce text-white/50">
+            <i data-lucide="chevron-down" class="h-8 w-8"></i>
+        </div>
+    </header>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="lg:grid lg:grid-cols-2 lg:gap-16 items-center">
+                <div class="mb-12 lg:mb-0">
+                    <div class="relative rounded-2xl overflow-hidden shadow-2xl">
+                        <img src="images/a-propos.jpg" alt="Group of friends skiing" class="w-full h-full object-cover">
+                        <div class="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-black/80 to-transparent">
+                            <p class="text-white font-medium">Founded by Pro Skiers</p>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <h2 class="text-brand-primary font-semibold tracking-wide uppercase text-sm mb-2">Who We Are</h2>
+                    <h3 class="text-3xl md:text-4xl font-display font-bold text-slate-900 mb-6">More Than Just a Rental
+                        Shop</h3>
+                    <p class="text-lg text-slate-600 mb-6 leading-relaxed">
+                        At Alpine Ascent, we believe that bad gear shouldn't ruin a good snow day. Founded in 2018 by
+                        former competitive skiers, we set out to solve the problem of outdated, poorly maintained rental
+                        equipment.
+                    </p>
+                    <p class="text-lg text-slate-600 mb-8 leading-relaxed">
+                        We stock only the latest models from top-tier brands, freshly tuned and waxed before every
+                        single rental. Whether you're a beginner finding your footing or an expert chasing powder, we
+                        have the perfect setup for you.
+                    </p>
+
+                    <div class="grid grid-cols-2 gap-6">
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0 p-2 bg-sky-50 rounded-lg">
+                                <i data-lucide="check-circle-2" class="h-6 w-6 text-brand-primary"></i>
+                            </div>
+                            <div class="ml-3">
+                                <h4 class="font-bold text-slate-900">Expert Fitting</h4>
+                                <p class="text-sm text-slate-500">Custom boot fitting for comfort.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0 p-2 bg-sky-50 rounded-lg">
+                                <i data-lucide="clock" class="h-6 w-6 text-brand-primary"></i>
+                            </div>
+                            <div class="ml-3">
+                                <h4 class="font-bold text-slate-900">Fast Pickup</h4>
+                                <p class="text-sm text-slate-500">Skip the line, hit the slopes.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="py-20 bg-slate-50 border-t border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-3xl md:text-4xl font-display font-bold text-slate-900 mb-4">The Alpine Advantage</h2>
+                <p class="text-slate-600 text-lg">Why thousands of visitors choose us for their winter adventure gear.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Feature 1 -->
+                <div
+                    class="bg-white p-8 rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 group border border-slate-100">
+                    <div
+                        class="h-14 w-14 bg-brand-primary/10 rounded-xl flex items-center justify-center mb-6 group-hover:bg-brand-primary group-hover:text-white transition-colors text-brand-primary">
+                        <i data-lucide="truck" class="h-7 w-7"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-3">Free Delivery</h3>
+                    <p class="text-slate-500 leading-relaxed">We bring the shop to you. Get fitted in the comfort of
+                        your hotel or condo and we'll pick it up when you're done.</p>
+                </div>
+
+                <!-- Feature 2 -->
+                <div
+                    class="bg-white p-8 rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 group border border-slate-100">
+                    <div
+                        class="h-14 w-14 bg-brand-primary/10 rounded-xl flex items-center justify-center mb-6 group-hover:bg-brand-primary group-hover:text-white transition-colors text-brand-primary">
+                        <i data-lucide="award" class="h-7 w-7"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-3">Premium Brands</h3>
+                    <p class="text-slate-500 leading-relaxed">Ride the latest gear from Rossignol, Burton, Salomon, and
+                        Atomic. No generic "rental fleet" junk here.</p>
+                </div>
+
+                <!-- Feature 3 -->
+                <div
+                    class="bg-white p-8 rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 group border border-slate-100">
+                    <div
+                        class="h-14 w-14 bg-brand-primary/10 rounded-xl flex items-center justify-center mb-6 group-hover:bg-brand-primary group-hover:text-white transition-colors text-brand-primary">
+                        <i data-lucide="shield-check" class="h-7 w-7"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-3">Damage Insurance</h3>
+                    <p class="text-slate-500 leading-relaxed">Ski with peace of mind. Our comprehensive coverage
+                        protects you against rock damage and breakage.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Product Highlights (The Gear) -->
+    <section id="gear" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-end mb-12">
+                <div class="max-w-2xl">
+                    <h2 class="text-3xl md:text-4xl font-display font-bold text-slate-900 mb-4">Explore Our Fleet</h2>
+                    <p class="text-slate-600 text-lg">Choose the package that matches your skill level and terrain
+                        preference.</p>
+                </div>
+                <a
+                    class="hidden md:flex items-center text-brand-primary font-bold hover:text-sky-700 transition-colors mt-4 md:mt-0">
+                    See Full Catalog <i data-lucide="arrow-right" class="ml-2 h-5 w-5"></i>
+                </a>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Card 1 -->
+                <div class="group rounded-2xl overflow-hidden border border-slate-100 shadow-lg">
+                    <div class="h-64 overflow-hidden img-zoom-container relative">
+                        <img src="images/ski-sport.jpg" alt="Sport Skis" class="w-full h-full object-cover">
+                        <div
+                            class="absolute top-4 right-4 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full text-xs font-bold text-slate-900">
+                            MOST POPULAR</div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-slate-900 mb-2">Performance Skis</h3>
+                        <p class="text-slate-500 text-sm mb-4 h-10">For intermediate skiers looking for stability and
+                            control on groomed runs.</p>
+                        <div class="flex items-center justify-between border-t border-slate-100 pt-4">
+                            <span class="text-slate-900 font-bold text-lg">$45<span
+                                    class="text-sm text-slate-500 font-normal">/day</span></span>
+                            <button class="text-brand-primary hover:text-sky-700 font-semibold text-sm">Details</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="group rounded-2xl overflow-hidden border border-slate-100 shadow-lg">
+                    <div class="h-64 overflow-hidden img-zoom-container relative">
+                        <img src="images/snowboard.jpg" alt="Snowboard" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-slate-900 mb-2">All-Mountain Boards</h3>
+                        <p class="text-slate-500 text-sm mb-4 h-10">Versatile snowboards designed to handle everything
+                            from park to powder.</p>
+                        <div class="flex items-center justify-between border-t border-slate-100 pt-4">
+                            <span class="text-slate-900 font-bold text-lg">$45<span
+                                    class="text-sm text-slate-500 font-normal">/day</span></span>
+                            <button class="text-brand-primary hover:text-sky-700 font-semibold text-sm">Details</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="group rounded-2xl overflow-hidden border border-slate-100 shadow-lg">
+                    <div class="h-64 overflow-hidden img-zoom-container relative">
+                        <img src="images/ski-demo.jpg" alt="Demo Skis" class="w-full h-full object-cover">
+                        <div
+                            class="absolute top-4 right-4 bg-brand-primary text-white px-3 py-1 rounded-full text-xs font-bold">
+                            EXPERT</div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-slate-900 mb-2">Demo Package</h3>
+                        <p class="text-slate-500 text-sm mb-4 h-10">Top-of-the-line models from this year's season. Swap
+                            models daily.</p>
+                        <div class="flex items-center justify-between border-t border-slate-100 pt-4">
+                            <span class="text-slate-900 font-bold text-lg">$65<span
+                                    class="text-sm text-slate-500 font-normal">/day</span></span>
+                            <button class="text-brand-primary hover:text-sky-700 font-semibold text-sm">Details</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-8 text-center md:hidden">
+                <a class="inline-flex items-center text-brand-primary font-bold hover:text-sky-700 transition-colors">
+                    See Full Catalog <i data-lucide="arrow-right" class="ml-2 h-5 w-5"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Banner -->
+    <section id="contact" class="py-24 bg-slate-900 relative overflow-hidden">
+        <!-- Decorative Circles -->
+        <div class="absolute top-0 right-0 -mr-20 -mt-20 w-96 h-96 bg-brand-primary/10 rounded-full blur-3xl"></div>
+        <div class="absolute bottom-0 left-0 -ml-20 -mb-20 w-80 h-80 bg-blue-600/10 rounded-full blur-3xl"></div>
+
+        <div class="relative max-w-4xl mx-auto px-4 text-center">
+            <h2 class="text-4xl md:text-5xl font-display font-bold text-white mb-6">Ready to hit the powder?</h2>
+            <p class="text-xl text-slate-300 mb-10">Gear up online to save 20% and guarantee your sizes for the busy
+                weekend.</p>
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <button
+                    class="px-8 py-4 bg-transparent border-2 border-slate-600 hover:border-white text-white hover:text-white hover:bg-white/5 rounded-full text-lg font-bold transition-all">
+                    Contact Support
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-slate-950 text-slate-400 py-12 border-t border-slate-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
+                <div class="col-span-1 md:col-span-1">
+                    <div class="flex items-center mb-4 text-white">
+                        <i data-lucide="mountain-snow" class="h-6 w-6 text-brand-primary mr-2"></i>
+                        <span class="font-display font-bold text-lg">ALPINE<span
+                                class="text-brand-primary">ASCENT</span></span>
+                    </div>
+                    <p class="text-sm leading-relaxed">
+                        Premium ski and snowboard rentals delivered to your door. Experience the mountain the right way.
+                    </p>
+                </div>
+
+                <div>
+                    <h4 class="text-white font-bold mb-4">Shop</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#" class="hover:text-brand-primary transition-colors">Ski Packages</a></li>
+                        <li><a href="#" class="hover:text-brand-primary transition-colors">Snowboard Packages</a></li>
+                        <li><a href="#" class="hover:text-brand-primary transition-colors">Helmets & Accessories</a>
+                        </li>
+                        <li><a href="#" class="hover:text-brand-primary transition-colors">Group Rates</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-white font-bold mb-4">Company</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#" class="hover:text-brand-primary transition-colors">About Us</a></li>
+                        <li><a href="#" class="hover:text-brand-primary transition-colors">Blog</a></li>
+                        <li><a href="#" class="hover:text-brand-primary transition-colors">Careers</a></li>
+                        <li><a href="#" class="hover:text-brand-primary transition-colors">Terms of Service</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-white font-bold mb-4">Visit Us</h4>
+                    <ul class="space-y-4 text-sm">
+                        <li class="flex items-start">
+                            <i data-lucide="map-pin" class="h-5 w-5 mr-2 text-brand-primary flex-shrink-0"></i>
+                            <span>123 Chemin des Neige<br>Chamonix, France 74400</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i data-lucide="phone" class="h-4 w-4 mr-3 text-brand-primary"></i>
+                            <span>(+33) 2 12 34 56 78</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i data-lucide="mail" class="h-4 w-4 mr-3 text-brand-primary"></i>
+                            <span>hello@alpineascent.com</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="border-t border-slate-900 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-sm">&copy; 2023 Alpine Ascent Rentals. All rights reserved.</p>
+                <div class="flex space-x-6 mt-4 md:mt-0">
+                    <a href="#" class="hover:text-brand-primary transition-colors"><i data-lucide="instagram"
+                            class="h-5 w-5"></i></a>
+                    <a href="#" class="hover:text-brand-primary transition-colors"><i data-lucide="facebook"
+                            class="h-5 w-5"></i></a>
+                    <a href="#" class="hover:text-brand-primary transition-colors"><i data-lucide="twitter"
+                            class="h-5 w-5"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Initialize Lucide Icons
+        lucide.createIcons();
+
+        // Mobile Menu Toggle
+        const btn = document.getElementById('mobile-menu-btn');
+        const menu = document.getElementById('mobile-menu');
+
+        btn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+        });
+
+        // Navbar Background Scroll Effect
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 10) {
+                navbar.classList.add('shadow-sm');
+            } else {
+                navbar.classList.remove('shadow-sm');
+            }
+        });
+
+        // Smooth Scroll for Anchor Links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                menu.classList.add('hidden'); // Close mobile menu on click
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>
