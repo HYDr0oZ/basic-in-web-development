@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Rental | Alpine Ascent</title>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@400;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            dark: '#0f172a',
+                            primary: '#0ea5e9',
+                            accent: '#38bdf8',
+                            light: '#f8fafc'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        display: ['Montserrat', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+
+<body
+    class="bg-slate-50 text-slate-800 font-sans antialiased selection:bg-brand-primary selection:text-white flex flex-col min-h-screen">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 bg-white/95 backdrop-blur-md border-b border-slate-200" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <a href="index.html" class="flex-shrink-0 flex items-center cursor-pointer group">
+                    <i data-lucide="mountain-snow"
+                        class="h-8 w-8 text-brand-primary mr-2 group-hover:rotate-12 transition-transform"></i>
+                    <span class="font-display font-bold text-xl text-slate-900 tracking-tight">ALPINE<span
+                            class="text-brand-primary">ASCENT</span></span>
+                </a>
+
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="index.html"
+                        class="text-sm font-medium text-slate-600 hover:text-brand-primary transition-colors">Home</a>
+                    <a href="catalog.html"
+                        class="text-sm font-medium text-slate-600 hover:text-brand-primary transition-colors">Catalog</a>
+                    <a href="order.html"
+                        class="bg-brand-primary hover:bg-sky-600 text-white px-5 py-2.5 rounded-full text-sm font-semibold transition-all shadow-lg shadow-brand-primary/20">
+                        Book Now
+                    </a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="text-slate-600 hover:text-brand-primary focus:outline-none p-2">
+                        <i data-lucide="menu" class="h-6 w-6"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="md:hidden hidden bg-white border-t border-slate-100 absolute w-full shadow-xl">
+            <div class="px-4 pt-2 pb-6 space-y-1">
+                <a href="index.html"
+                    class="block px-3 py-3 text-base font-medium text-slate-600 hover:text-brand-primary hover:bg-slate-50 rounded-md">Home</a>
+                <a href="catalog.html"
+                    class="block px-3 py-3 text-base font-medium text-slate-600 hover:text-brand-primary hover:bg-slate-50 rounded-md">Catalog</a>
+                <a href="order.html"
+                    class="block px-3 py-3 text-base font-medium text-brand-primary bg-sky-50 rounded-md">Book Now</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="flex-grow pt-32 pb-20 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-3xl mx-auto">
+
+            <!-- Intro Section -->
+            <div class="text-center mb-12">
+                <h1 class="text-3xl md:text-4xl font-display font-bold text-slate-900 mb-4">Complete Your Reservation
+                </h1>
+                <p class="text-slate-600 text-lg leading-relaxed">
+                    Fill out the details below to secure your gear. We'll have everything waxed, tuned, and ready for
+                    your arrival. No payment is required until pickup.
+                </p>
+            </div>
+
+            <!-- Order Form -->
+            <form action="thanks.html" method="GET"
+                class="bg-white rounded-2xl shadow-xl border border-slate-100 overflow-hidden">
+
+                <!-- Section 1: Customer Information -->
+                <div class="p-8 border-b border-slate-100">
+                    <div class="flex items-center mb-6">
+                        <div
+                            class="w-10 h-10 rounded-full bg-sky-100 flex items-center justify-center text-brand-primary font-bold mr-4">
+                            1</div>
+                        <h2 class="text-xl font-bold text-slate-900">Customer Information</h2>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div class="md:col-span-2">
+                            <label for="fullName" class="block text-sm font-medium text-slate-700 mb-2">Full Name <span
+                                    class="text-red-500">*</span></label>
+                            <input type="text" id="fullName" name="fullName" required
+                                class="w-full px-4 py-3 rounded-lg border border-slate-300 focus:border-brand-primary focus:ring-4 focus:ring-brand-primary/10 outline-none transition-all placeholder-slate-400"
+                                placeholder="e.g. Baptiste Rault">
+                        </div>
+
+                        <div>
+                            <label for="email" class="block text-sm font-medium text-slate-700 mb-2">Email Address <span
+                                    class="text-red-500">*</span></label>
+                            <input type="email" id="email" name="email" required
+                                class="w-full px-4 py-3 rounded-lg border border-slate-300 focus:border-brand-primary focus:ring-4 focus:ring-brand-primary/10 outline-none transition-all placeholder-slate-400"
+                                placeholder="baptiste@example.com">
+                        </div>
+
+                        <div>
+                            <label for="phone" class="block text-sm font-medium text-slate-700 mb-2">Phone Number <span
+                                    class="text-red-500">*</span></label>
+                            <input type="tel" id="phone" name="phone" required pattern="[0-9+\s-]+"
+                                class="w-full px-4 py-3 rounded-lg border border-slate-300 focus:border-brand-primary focus:ring-4 focus:ring-brand-primary/10 outline-none transition-all placeholder-slate-400"
+                                placeholder="+33 6 12 34 56 78">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Section 2: Rental Details -->
+                <div class="p-8 border-b border-slate-100 bg-slate-50/50">
+                    <div class="flex items-center mb-6">
+                        <div
+                            class="w-10 h-10 rounded-full bg-sky-100 flex items-center justify-center text-brand-primary font-bold mr-4">
+                            2</div>
+                        <h2 class="text-xl font-bold text-slate-900">Rental Details</h2>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div class="md:col-span-2">
+                            <label for="gearSelect" class="block text-sm font-medium text-slate-700 mb-2">Select
+                                Equipment <span class="text-red-500">*</span></label>
+                            <div class="relative">
+                                <select id="gearSelect" name="gearItem" required
+                                    class="w-full px-4 py-3 rounded-lg border border-slate-300 focus:border-brand-primary focus:ring-4 focus:ring-brand-primary/10 outline-none transition-all appearance-none bg-white">
+                                    <option value="" disabled selected>Choose your gear...</option>
+                                    <option value="performance-skis">Performance Carvers ($45/day)</option>
+                                    <option value="all-mountain-board">All-Mountain Snowboard ($45/day)</option>
+                                    <option value="demo-package">Pro Demo Package ($65/day)</option>
+                                    <option value="junior-kit">Junior Shredder Kit ($25/day)</option>
+                                    <option value="safety-bundle">Safety Bundle (Helmet + Goggles) ($15/day)</option>
+                                    <option value="backcountry-kit">Backcountry Safety Kit ($30/day)</option>
+                                </select>
+                                <i data-lucide="chevron-down"
+                                    class="absolute right-4 top-1/2 transform -translate-y-1/2 w-5 h-5 text-slate-400 pointer-events-none"></i>
+                            </div>
+                        </div>
+
+                        <div>
+                            <label for="startDate" class="block text-sm font-medium text-slate-700 mb-2">Start Date
+                                <span class="text-red-500">*</span></label>
+                            <input type="date" id="startDate" name="startDate" required
+                                class="w-full px-4 py-3 rounded-lg border border-slate-300 focus:border-brand-primary focus:ring-4 focus:ring-brand-primary/10 outline-none transition-all text-slate-600">
+                        </div>
+
+                        <div>
+                            <label for="endDate" class="block text-sm font-medium text-slate-700 mb-2">End Date <span
+                                    class="text-red-500">*</span></label>
+                            <input type="date" id="endDate" name="endDate" required
+                                class="w-full px-4 py-3 rounded-lg border border-slate-300 focus:border-brand-primary focus:ring-4 focus:ring-brand-primary/10 outline-none transition-all text-slate-600">
+                        </div>
+
+                        <div>
+                            <label for="quantity" class="block text-sm font-medium text-slate-700 mb-2">Quantity <span
+                                    class="text-red-500">*</span></label>
+                            <input type="number" id="quantity" name="quantity" min="1" max="10" value="1" required
+                                class="w-full px-4 py-3 rounded-lg border border-slate-300 focus:border-brand-primary focus:ring-4 focus:ring-brand-primary/10 outline-none transition-all">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Section 3: Additional Info -->
+                <div class="p-8 bg-white">
+                    <div class="flex items-center mb-6">
+                        <div
+                            class="w-10 h-10 rounded-full bg-sky-100 flex items-center justify-center text-brand-primary font-bold mr-4">
+                            3</div>
+                        <h2 class="text-xl font-bold text-slate-900">Final Details</h2>
+                    </div>
+
+                    <div class="space-y-6">
+                        <div>
+                            <label for="requests" class="block text-sm font-medium text-slate-700 mb-2">Special
+                                Requests</label>
+                            <textarea id="requests" name="requests" rows="3"
+                                class="w-full px-4 py-3 rounded-lg border border-slate-300 focus:border-brand-primary focus:ring-4 focus:ring-brand-primary/10 outline-none transition-all placeholder-slate-400"
+                                placeholder="Height, weight, shoe size for fitting, or delivery instructions..."></textarea>
+                        </div>
+
+                        <div class="space-y-4 pt-4 border-t border-slate-100">
+                            <label class="flex items-start cursor-pointer group">
+                                <input type="checkbox" name="terms" required
+                                    class="mt-1 w-5 h-5 text-brand-primary border-slate-300 rounded focus:ring-brand-primary">
+                                <span class="ml-3 text-sm text-slate-600 group-hover:text-slate-900 transition-colors">
+                                    I accept the <a href="#" class="text-brand-primary hover:underline">Rental Terms</a>
+                                    and <a href="#" class="text-brand-primary hover:underline">Privacy Policy</a>.
+                                </span>
+                            </label>
+
+                            <label class="flex items-start cursor-pointer group">
+                                <input type="checkbox" name="newsletter"
+                                    class="mt-1 w-5 h-5 text-brand-primary border-slate-300 rounded focus:ring-brand-primary">
+                                <span class="ml-3 text-sm text-slate-600 group-hover:text-slate-900 transition-colors">
+                                    Subscribe to the Alpine Ascent newsletter for slope reports and discounts.
+                                </span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Submit Button -->
+                <div class="p-8 bg-slate-50 border-t border-slate-100">
+                    <button type="submit"
+                        class="w-full py-4 bg-brand-primary hover:bg-sky-600 text-white rounded-xl text-lg font-bold shadow-lg shadow-brand-primary/30 transition-all transform hover:-translate-y-1 flex items-center justify-center">
+                        Submit Rental Request <i data-lucide="send" class="ml-2 w-5 h-5"></i>
+                    </button>
+                    <p class="text-center text-xs text-slate-400 mt-4 flex items-center justify-center">
+                        <i data-lucide="lock" class="w-3 h-3 mr-1"></i> Your data is processed securely
+                    </p>
+                </div>
+
+            </form>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-slate-950 text-slate-400 py-12 border-t border-slate-900 mt-auto">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="flex items-center mb-4 md:mb-0 text-white">
+                    <i data-lucide="mountain-snow" class="h-6 w-6 text-brand-primary mr-2"></i>
+                    <span class="font-display font-bold text-lg">ALPINE<span
+                            class="text-brand-primary">ASCENT</span></span>
+                </div>
+                <div class="flex space-x-8 text-sm">
+                    <a href="index.html" class="hover:text-white transition-colors">Home</a>
+                    <a href="catalog.html" class="hover:text-white transition-colors">Catalog</a>
+                    <a href="#" class="hover:text-white transition-colors">Support</a>
+                </div>
+                <p class="text-sm mt-4 md:mt-0">&copy; 2023 Alpine Ascent Rentals.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        lucide.createIcons();
+
+        const btn = document.getElementById('mobile-menu-btn');
+        const menu = document.getElementById('mobile-menu');
+
+        if (btn && menu) {
+            btn.addEventListener('click', () => {
+                menu.classList.toggle('hidden');
+            });
+        }
+
+        // Simple client-side validation logic (optional enhancement)
+        const form = document.querySelector('form');
+        form.addEventListener('submit', (e) => {
+            // If we actually had a backend, we'd submit here.
+            // For now, let the default action happen or alert:
+            // e.preventDefault();
+            // alert('Thank you! Your order request has been simulated.');
+        });
+    </script>
+</body>
+
+</html>

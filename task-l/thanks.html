@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Received | Alpine Ascent</title>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Montserrat:wght@400;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            dark: '#0f172a',
+                            primary: '#0ea5e9',
+                            accent: '#38bdf8',
+                            light: '#f8fafc'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        display: ['Montserrat', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+
+<body
+    class="bg-slate-50 text-slate-800 font-sans antialiased selection:bg-brand-primary selection:text-white flex flex-col min-h-screen">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 bg-white/95 backdrop-blur-md border-b border-slate-200" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <a href="index.html" class="flex-shrink-0 flex items-center cursor-pointer group">
+                    <i data-lucide="mountain-snow"
+                        class="h-8 w-8 text-brand-primary mr-2 group-hover:rotate-12 transition-transform"></i>
+                    <span class="font-display font-bold text-xl text-slate-900 tracking-tight">ALPINE<span
+                            class="text-brand-primary">ASCENT</span></span>
+                </a>
+
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="index.html"
+                        class="text-sm font-medium text-slate-600 hover:text-brand-primary transition-colors">Home</a>
+                    <a href="catalog.html"
+                        class="text-sm font-medium text-slate-600 hover:text-brand-primary transition-colors">Catalog</a>
+                    <a href="order.html"
+                        class="bg-brand-primary hover:bg-sky-600 text-white px-5 py-2.5 rounded-full text-sm font-semibold transition-all shadow-lg shadow-brand-primary/20">
+                        Book Now
+                    </a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="text-slate-600 hover:text-brand-primary focus:outline-none p-2">
+                        <i data-lucide="menu" class="h-6 w-6"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="md:hidden hidden bg-white border-t border-slate-100 absolute w-full shadow-lg">
+            <div class="px-4 pt-2 pb-6 space-y-1">
+                <a href="index.html" class="block px-3 py-3 text-base font-medium text-slate-600 hover:text-brand-primary hover:bg-slate-50 rounded-md">Home</a>
+                <a href="catalog.html" class="block px-3 py-3 text-base font-medium text-slate-600 hover:text-brand-primary hover:bg-slate-50 rounded-md">Catalog</a>
+                <a href="order.html" class="block px-3 py-3 text-base font-medium text-brand-primary bg-sky-50 rounded-md">Book Now</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="flex-grow flex items-center justify-center pt-20 pb-12 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-xl w-full text-center">
+            
+            <!-- Success Icon -->
+            <div class="mx-auto flex items-center justify-center h-24 w-24 rounded-full bg-green-100 mb-8 animate-bounce">
+                <i data-lucide="check" class="h-12 w-12 text-green-600"></i>
+            </div>
+
+            <!-- Headings -->
+            <h1 class="text-3xl md:text-4xl font-display font-bold text-slate-900 mb-4">Request Received!</h1>
+            <p class="text-lg text-slate-600 mb-8">
+                Thanks <span id="customer-name" class="font-bold text-slate-900">skier</span>! We've received your request for 
+                <span id="gear-item" class="font-bold text-slate-900">gear</span>.
+            </p>
+
+            <!-- Info Card -->
+            <div class="bg-white rounded-2xl shadow-xl border border-slate-100 p-8 mb-10 text-left">
+                <h3 class="text-lg font-bold text-slate-900 mb-4 border-b border-slate-100 pb-2">Next Steps</h3>
+                <ul class="space-y-4">
+                    <li class="flex items-start">
+                        <i data-lucide="mail-check" class="h-6 w-6 text-brand-primary mr-3 flex-shrink-0"></i>
+                        <p class="text-sm text-slate-600">We've sent a confirmation email with your reservation ID.</p>
+                    </li>
+                    <li class="flex items-start">
+                        <i data-lucide="user-check" class="h-6 w-6 text-brand-primary mr-3 flex-shrink-0"></i>
+                        <p class="text-sm text-slate-600">Our technicians are reviewing your fitting details.</p>
+                    </li>
+                    <li class="flex items-start">
+                        <i data-lucide="calendar-clock" class="h-6 w-6 text-brand-primary mr-3 flex-shrink-0"></i>
+                        <p class="text-sm text-slate-600">Payment is due upon pickup/delivery on your start date.</p>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Actions -->
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <a href="index.html" class="px-8 py-3 bg-brand-primary hover:bg-sky-600 text-white rounded-full font-bold transition-all shadow-lg hover:shadow-brand-primary/30">
+                    Return Home
+                </a>
+                <a href="catalog.html" class="px-8 py-3 bg-white border border-slate-200 hover:border-brand-primary text-slate-700 hover:text-brand-primary rounded-full font-bold transition-all">
+                    Browse More Gear
+                </a>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-slate-950 text-slate-400 py-12 border-t border-slate-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="flex items-center mb-4 md:mb-0 text-white">
+                    <i data-lucide="mountain-snow" class="h-6 w-6 text-brand-primary mr-2"></i>
+                    <span class="font-display font-bold text-lg">ALPINE<span class="text-brand-primary">ASCENT</span></span>
+                </div>
+                <p class="text-sm">&copy; 2023 Alpine Ascent Rentals.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        lucide.createIcons();
+
+        // Mobile Menu Logic
+        const btn = document.getElementById('mobile-menu-btn');
+        const menu = document.getElementById('mobile-menu');
+        if (btn && menu) {
+            btn.addEventListener('click', () => {
+                menu.classList.toggle('hidden');
+            });
+        }
+
+        // Dynamic Data Parsing (Simulating backend response)
+        // This takes the query parameters from the URL (e.g. ?fullName=John&gearItem=skis)
+        // and updates the page text to match.
+        window.addEventListener('DOMContentLoaded', () => {
+            const params = new URLSearchParams(window.location.search);
+            
+            const name = params.get('fullName');
+            const gear = params.get('gearItem');
+
+            if (name) {
+                // Get just the first name for a friendlier touch
+                const firstName = name.split(' ')[0] || name;
+                document.getElementById('customer-name').textContent = firstName;
+            }
+
+            if (gear) {
+                // Clean up the value (e.g., "performance-skis" -> "Performance Skis")
+                const readableGear = gear.split('-').map(word => 
+                    word.charAt(0).toUpperCase() + word.slice(1)
+                ).join(' ');
+                document.getElementById('gear-item').textContent = readableGear;
+            }
+        });
+    </script>
+</body>
+</html>

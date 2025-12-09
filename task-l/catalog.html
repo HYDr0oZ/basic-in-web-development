@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rental Catalog | Alpine Ascent</title>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Montserrat:wght@400;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            dark: '#0f172a',
+                            primary: '#0ea5e9',
+                            accent: '#38bdf8',
+                            light: '#f8fafc'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        display: ['Montserrat', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+
+<body
+    class="bg-slate-50 text-slate-800 font-sans antialiased selection:bg-brand-primary selection:text-white flex flex-col min-h-screen">
+
+    <!-- Navigation (Matching Landing Page) -->
+    <nav class="fixed w-full z-50 bg-white/95 backdrop-blur-md border-b border-slate-200" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <a href="index.html" class="flex-shrink-0 flex items-center cursor-pointer group">
+                    <i data-lucide="mountain-snow"
+                        class="h-8 w-8 text-brand-primary mr-2 group-hover:rotate-12 transition-transform"></i>
+                    <span class="font-display font-bold text-xl text-slate-900 tracking-tight">ALPINE<span
+                            class="text-brand-primary">ASCENT</span></span>
+                </a>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="index.html"
+                        class="text-sm font-medium text-slate-600 hover:text-brand-primary transition-colors">Home</a>
+                    <a href="catalog.html" class="text-sm font-medium text-brand-primary font-bold">Catalog</a>
+                    <a href="order.html"
+                        class="bg-brand-primary hover:bg-sky-600 text-white px-5 py-2.5 rounded-full text-sm font-semibold transition-all shadow-lg hover:shadow-brand-primary/30">
+                        Book Your Fit
+                    </a>
+                </div>
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="text-slate-600 hover:text-brand-primary focus:outline-none p-2">
+                        <i data-lucide="menu" class="h-6 w-6"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="md:hidden hidden bg-white border-t border-slate-100 absolute w-full shadow-lg">
+            <div class="px-4 pt-2 pb-6 space-y-1">
+                <a href="index.html"
+                    class="block px-3 py-3 text-base font-medium text-slate-600 hover:text-brand-primary hover:bg-slate-50 rounded-md">Home</a>
+                <a href="catalog.html"
+                    class="block px-3 py-3 text-base font-medium text-brand-primary bg-sky-50 rounded-md">Catalog</a>
+                <a href="order.html"
+                    class="block px-3 py-3 text-base font-medium text-slate-600 hover:text-brand-primary hover:bg-slate-50 rounded-md">Book
+                    Now</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Header / Intro Section -->
+    <header class="pt-32 pb-12 bg-white border-b border-slate-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h1 class="text-3xl md:text-5xl font-display font-bold text-slate-900 mb-4">Our Premium Rental Fleet</h1>
+            <p class="max-w-2xl mx-auto text-lg text-slate-600 leading-relaxed">
+                Browse our selection of top-tier skis, snowboards, and safety equipment. All rentals include free
+                delivery to your accommodation and custom fitting.
+            </p>
+        </div>
+    </header>
+
+    <!-- Product Grid Section -->
+    <main class="flex-grow py-16 bg-slate-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+            <!-- Grid Container -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+                <!-- Product 1 -->
+                <article
+                    class="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition-shadow duration-300 border border-slate-100 flex flex-col">
+                    <div class="aspect-video w-full overflow-hidden relative bg-slate-200">
+                        <img src="images/ski-sport.jpg" alt="Pair of red performance skis leaning against snow"
+                            class="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+                            loading="lazy">
+                        <div
+                            class="absolute top-3 right-3 bg-sky-100 text-brand-primary text-xs font-bold px-2 py-1 rounded">
+                            POPULAR</div>
+                    </div>
+                    <div class="p-6 flex flex-col flex-grow">
+                        <h2 class="text-xl font-bold text-slate-900 mb-2">Performance Carvers</h2>
+                        <p class="text-slate-500 text-sm mb-4 flex-grow line-clamp-3">
+                            Designed for intermediate to advanced skiers who want precision on groomed runs. Features
+                            enhanced edge grip and stability at speed.
+                        </p>
+                        <div class="pt-4 border-t border-slate-100 flex items-center justify-between">
+                            <div class="text-slate-900 font-bold">
+                                45 €/d <span class="text-slate-400 text-sm font-normal">|</span> 249 €/wk
+                            </div>
+                            <a href="order.html"
+                                class="text-brand-primary hover:text-sky-700 text-sm font-semibold flex items-center group">
+                                Select <i data-lucide="chevron-right"
+                                    class="ml-1 w-4 h-4 group-hover:translate-x-1 transition-transform"></i>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Product 2 -->
+                <article
+                    class="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition-shadow duration-300 border border-slate-100 flex flex-col">
+                    <div class="aspect-video w-full overflow-hidden relative bg-slate-200">
+                        <img src="images/snowboard.jpg" alt="Black snowboard resting in fresh powder"
+                            class="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+                            loading="lazy">
+                    </div>
+                    <div class="p-6 flex flex-col flex-grow">
+                        <h2 class="text-xl font-bold text-slate-900 mb-2">All-Mountain Board</h2>
+                        <p class="text-slate-500 text-sm mb-4 flex-grow line-clamp-3">
+                            A versatile directional twin shape perfect for exploring the whole mountain. Forgiving flex
+                            for playfulness with enough pop for jumps.
+                        </p>
+                        <div class="pt-4 border-t border-slate-100 flex items-center justify-between">
+                            <div class="text-slate-900 font-bold">
+                                45 €/d <span class="text-slate-400 text-sm font-normal">|</span> 249 €/wk
+                            </div>
+                            <a href="order.html"
+                                class="text-brand-primary hover:text-sky-700 text-sm font-semibold flex items-center group">
+                                Select <i data-lucide="chevron-right"
+                                    class="ml-1 w-4 h-4 group-hover:translate-x-1 transition-transform"></i>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Product 3 -->
+                <article
+                    class="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition-shadow duration-300 border border-slate-100 flex flex-col">
+                    <div class="aspect-video w-full overflow-hidden relative bg-slate-200">
+                        <img src="images/ski-demo.jpg" alt="Close up of high end ski bindings"
+                            class="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+                            loading="lazy">
+                        <div
+                            class="absolute top-3 right-3 bg-brand-primary text-white text-xs font-bold px-2 py-1 rounded">
+                            PRO</div>
+                    </div>
+                    <div class="p-6 flex flex-col flex-grow">
+                        <h2 class="text-xl font-bold text-slate-900 mb-2">Demo Package</h2>
+                        <p class="text-slate-500 text-sm mb-4 flex-grow line-clamp-3">
+                            Try the latest 2024/2025 models. This package allows you to swap equipment daily to suit
+                            changing snow conditions.
+                        </p>
+                        <div class="pt-4 border-t border-slate-100 flex items-center justify-between">
+                            <div class="text-slate-900 font-bold">
+                                65 €/d <span class="text-slate-400 text-sm font-normal">|</span> 350 €/wk
+                            </div>
+                            <a href="order.html"
+                                class="text-brand-primary hover:text-sky-700 text-sm font-semibold flex items-center group">
+                                Select <i data-lucide="chevron-right"
+                                    class="ml-1 w-4 h-4 group-hover:translate-x-1 transition-transform"></i>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Product 4 -->
+                <article
+                    class="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition-shadow duration-300 border border-slate-100 flex flex-col">
+                    <div class="aspect-video w-full overflow-hidden relative bg-slate-200">
+                        <img src="images/enfant-ski.jpg" alt="Child skier wearing colorful gear"
+                            class="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+                            loading="lazy">
+                    </div>
+                    <div class="p-6 flex flex-col flex-grow">
+                        <h2 class="text-xl font-bold text-slate-900 mb-2">Junior Shredder Kit</h2>
+                        <p class="text-slate-500 text-sm mb-4 flex-grow line-clamp-3">
+                            Lightweight skis or boards specifically designed for kids. Includes easy-entry boots and a
+                            complimentary helmet.
+                        </p>
+                        <div class="pt-4 border-t border-slate-100 flex items-center justify-between">
+                            <div class="text-slate-900 font-bold">
+                                25 €/d <span class="text-slate-400 text-sm font-normal">|</span> 120 €/wk
+                            </div>
+                            <a href="order.html"
+                                class="text-brand-primary hover:text-sky-700 text-sm font-semibold flex items-center group">
+                                Select <i data-lucide="chevron-right"
+                                    class="ml-1 w-4 h-4 group-hover:translate-x-1 transition-transform"></i>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Product 5 -->
+                <article
+                    class="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition-shadow duration-300 border border-slate-100 flex flex-col">
+                    <div class="aspect-video w-full overflow-hidden relative bg-slate-200">
+                        <img src="images/equipement.png" alt="Ski helmet and goggles on a table"
+                            class="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+                            loading="lazy">
+                    </div>
+                    <div class="p-6 flex flex-col flex-grow">
+                        <h2 class="text-xl font-bold text-slate-900 mb-2">Safety Bundle</h2>
+                        <p class="text-slate-500 text-sm mb-4 flex-grow line-clamp-3">
+                            Premium MIPS-equipped helmet and anti-fog goggles. Essential protection that doesn't
+                            compromise on comfort or visibility.
+                        </p>
+                        <div class="pt-4 border-t border-slate-100 flex items-center justify-between">
+                            <div class="text-slate-900 font-bold">
+                                15 €/d <span class="text-slate-400 text-sm font-normal">|</span> 80 €/wk
+                            </div>
+                            <a href="order.html"
+                                class="text-brand-primary hover:text-sky-700 text-sm font-semibold flex items-center group">
+                                Select <i data-lucide="chevron-right"
+                                    class="ml-1 w-4 h-4 group-hover:translate-x-1 transition-transform"></i>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Product 6 -->
+                <article
+                    class="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition-shadow duration-300 border border-slate-100 flex flex-col">
+                    <div class="aspect-video w-full overflow-hidden relative bg-slate-200">
+                        <img src="images/hors-piste.png" alt="Backcountry ski gear in snow"
+                            class="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+                            loading="lazy">
+                    </div>
+                    <div class="p-6 flex flex-col flex-grow">
+                        <h2 class="text-xl font-bold text-slate-900 mb-2">Backcountry Safety Kit</h2>
+                        <p class="text-slate-500 text-sm mb-4 flex-grow line-clamp-3">
+                            Complete avalanche safety set including beacon, shovel, and probe. Required for off-piste
+                            excursions.
+                        </p>
+                        <div class="pt-4 border-t border-slate-100 flex items-center justify-between">
+                            <div class="text-slate-900 font-bold">
+                                30 €/d <span class="text-slate-400 text-sm font-normal">|</span> 150 €/wk
+                            </div>
+                            <a href="order.html"
+                                class="text-brand-primary hover:text-sky-700 text-sm font-semibold flex items-center group">
+                                Select <i data-lucide="chevron-right"
+                                    class="ml-1 w-4 h-4 group-hover:translate-x-1 transition-transform"></i>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+            </div>
+        </div>
+    </main>
+
+    <!-- Video Section -->
+    <section class="py-16 bg-white border-t border-slate-200">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-2xl md:text-3xl font-display font-bold text-slate-900 mb-4">See Our Gear in Action</h2>
+            <p class="text-slate-600 mb-10">Learn how we tune our skis to ensure the perfect ride every time.</p>
+
+            <!-- Responsive Video Container -->
+            <div class="relative w-full rounded-2xl overflow-hidden shadow-2xl bg-slate-900"
+                style="padding-top: 56.25%;">
+                <video class="absolute top-0 left-0 w-full h-full object-cover" controls preload="metadata" playsinline>
+
+                    <source src="videos/presentation.mp4" type="video/mp4">
+
+
+                    <track src="videos/captions.vtt" kind="subtitles" srclang="en" label="English">
+
+                    Votre navigateur ne supporte pas la lecture de vidéos.
+                </video>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer (Identical to Landing) -->
+    <footer class="bg-slate-950 text-slate-400 py-12 border-t border-slate-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
+                <div class="col-span-1 md:col-span-1">
+                    <div class="flex items-center mb-4 text-white">
+                        <i data-lucide="mountain-snow" class="h-6 w-6 text-brand-primary mr-2"></i>
+                        <span class="font-display font-bold text-lg">ALPINE<span
+                                class="text-brand-primary">ASCENT</span></span>
+                    </div>
+                    <p class="text-sm leading-relaxed">
+                        Premium ski and snowboard rentals delivered to your door. Experience the mountain the right way.
+                    </p>
+                </div>
+                <div>
+                    <h4 class="text-white font-bold mb-4">Shop</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="catalog.html" class="hover:text-brand-primary transition-colors">Ski Packages</a>
+                        </li>
+                        <li><a href="catalog.html" class="hover:text-brand-primary transition-colors">Snowboard
+                                Packages</a></li>
+                        <li><a href="catalog.html" class="hover:text-brand-primary transition-colors">Helmets &
+                                Accessories</a>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white font-bold mb-4">Company</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="index.html#about" class="hover:text-brand-primary transition-colors">About Us</a>
+                        </li>
+                        <li><a href="#" class="hover:text-brand-primary transition-colors">Terms of Service</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white font-bold mb-4">Contact</h4>
+                    <ul class="space-y-4 text-sm">
+                        <li class="flex items-center">
+                            <i data-lucide="phone" class="h-4 w-4 mr-3 text-brand-primary"></i>
+                            <span>(+33) 6 12 34 56 78</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i data-lucide="mail" class="h-4 w-4 mr-3 text-brand-primary"></i>
+                            <span>hello@alpineascent.com</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-slate-900 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-sm">&copy; 2023 Alpine Ascent Rentals. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        lucide.createIcons();
+
+        // Mobile Menu Logic
+        const btn = document.getElementById('mobile-menu-btn');
+        const menu = document.getElementById('mobile-menu');
+
+        if (btn && menu) {
+            btn.addEventListener('click', () => {
+                menu.classList.toggle('hidden');
+            });
+        }
+    </script>
+</body>
+
+</html>
